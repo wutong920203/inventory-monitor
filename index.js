@@ -36,12 +36,12 @@ async function get(skus){
             // console.log(emailMessage);
             if(emailMessage !== "") {
                 await email("Check Target site", emailMessage);
-                await notifier.notify({
-                    title: "PS5 Availability",
-                    message: "found",
-                    sound: "91404569.mp3",
-                    timeout: false,
-                });
+                // await notifier.notify({
+                //     title: "PS5 Availability",
+                //     message: "found",
+                //     sound: "91404569.mp3",
+                //     timeout: false,
+                // });
                 await console.log(emailMessage);
             } else {
                 console.log("Not found;", sku);
