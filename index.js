@@ -1,6 +1,4 @@
 const axios = require('axios');
-const sleep = require('sleep');
-const notifier = require("node-notifier");
 const { email } = require("./test");
 
 async function get(skus){
@@ -47,12 +45,10 @@ async function get(skus){
                 console.log("Not found;", sku);
                 console.log(`Generated: ${new Date().toLocaleString()}\n`);
             }
-            await sleep.sleep(61);
             // console.log(response.data.data.fulfillment_fiats)
         })
         .catch((err) => {
             console.log(err.response.data.errors);
-            sleep.sleep(30);
         });
     // });
     };
@@ -61,6 +57,6 @@ async function get(skus){
 }
 
 setInterval(() => {
-    get([81114595,81114596]);
+    get([81114596]);
     // get([83374957])
 }, 61100);
